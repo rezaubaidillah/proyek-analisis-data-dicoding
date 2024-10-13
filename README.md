@@ -1,19 +1,4 @@
-# 🎈 Blank app template
+# proyek_akhir_analisis_data
+Projek akhir analisis data menggunakan data set bike rent
 
-A simple Streamlit app template for you to modify!
-
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
-
-### How to run it on your own machine
-
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+proyek ini digunakan untuk menyelesaikan Submission Proyek Analisis Data https://www.dicoding.com/academies/555/tutorials/31230
