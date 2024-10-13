@@ -276,7 +276,7 @@ else:
     with st.container():
         total_orders = daily_orders_df.order_count.sum()
         total_counts = daily_orders_df.counts.sum()
-        st.metric("Total orders", value=total_orders)
+        st.metric("Total orders / hour", value=total_orders)
         st.metric("Total People Rent", value=total_counts)
 
     # Menentukan interval berdasarkan rentang waktu
