@@ -72,9 +72,6 @@ This will launch the Streamlit application in your default web browser. You will
 Make sure the `app.py` file contains the Streamlit application logic. If the file is named differently, update the command with the correct filename.
 
 ## Project Structure
-
-The typical structure of this project might look like:
-
 ```
 ├── LICENSE
 ├── README.md
