@@ -227,9 +227,9 @@ def plot_casual_vs_registered(data, statistic_select):
 
 # Memuat data
 all_df = pd.read_csv(
-    "/dashboard/hour.csv")
+    "dashboard/hour.csv")
 day_df = pd.read_csv(
-    "/dashboard/day.csv")
+    "dashboard/day.csv")
 # Konversi kolom tanggal ke datetime
 all_df["dteday"] = pd.to_datetime(all_df["dteday"])
 day_df["dteday"] = pd.to_datetime(day_df["dteday"])
