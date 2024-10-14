@@ -1,7 +1,3 @@
-To create a `README.md` file for running the Streamlit app in the repository [https://github.com/rezaubaidillah/proyek-analisis-data-dicoding](https://github.com/rezaubaidillah/proyek-analisis-data-dicoding), here's a sample that covers the steps to set up the environment and run the app:
-
----
-
 # Proyek Analisis Data Dicoding
 
 This project is a data analysis project that uses a Streamlit web application for visualization. The project contains a series of Python scripts and data files used to analyze and display insights interactively.
