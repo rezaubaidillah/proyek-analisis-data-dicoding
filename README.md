@@ -76,21 +76,19 @@ Make sure the `app.py` file contains the Streamlit application logic. If the fil
 The typical structure of this project might look like:
 
 ```
-proyek-analisis-data-dicoding/
-│
-├── data/                   # Folder containing the dataset
-├── app.py                  # Main Streamlit application
-├── analysis_notebook.ipynb  # Jupyter notebook with data analysis
-├── requirements.txt         # List of dependencies
-├── README.md                # Project documentation
-└── other_scripts/           # Any other auxiliary scripts
+├── LICENSE
+├── README.md
+├── dashboard
+│   ├── day.csv
+│   ├── hour.csv
+│   └── streamlit_app.py
+├── data
+│   ├── Readme.txt
+│   ├── day.csv
+│   └── hour.csv
+├── notebook.ipynb
+└── requirements.txt
 ```
-
-- `data/`: This folder holds the datasets used in the project.
-- `app.py`: The main file that contains the Streamlit code to run the web app.
-- `requirements.txt`: A file listing the required Python packages.
-- `analysis_notebook.ipynb`: A notebook that contains exploratory data analysis.
-
 ## Dependencies
 
 Ensure the following Python libraries are installed:
@@ -110,7 +108,3 @@ pip install -r requirements.txt
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-This `README.md` file should provide the necessary instructions to set up, install dependencies, and run the Streamlit app from the repository. Make sure to adjust any specific details or filenames based on your project's structure.
