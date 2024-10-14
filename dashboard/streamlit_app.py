@@ -227,9 +227,9 @@ def plot_casual_vs_registered(data, statistic_select):
 
 # Memuat data
 all_df = pd.read_csv(
-    "dashboard/hour.csv")
+    "/workspaces/proyek-analisis-data-dicoding/dashboard/hour.csv")
 day_df = pd.read_csv(
-    "dashboard/day.csv")
+    "/workspaces/proyek-analisis-data-dicoding/dashboard/day.csv")
 # Konversi kolom tanggal ke datetime
 all_df["dteday"] = pd.to_datetime(all_df["dteday"])
 day_df["dteday"] = pd.to_datetime(day_df["dteday"])
@@ -276,7 +276,7 @@ else:
     with st.container():
         total_orders = daily_orders_df.order_count.sum()
         total_counts = daily_orders_df.counts.sum()
-        st.metric("Total orders in hour", value=total_orders)
+        st.metric("Total orders", value=total_orders)
         st.metric("Total People Rent", value=total_counts)
 
     # Menentukan interval berdasarkan rentang waktu
@@ -331,13 +331,23 @@ else:
     # Membuat selectbox untuk setiap faktor eksternal
     casual_register_select = st.selectbox(
         label="Casual Vs Register Cluster Filter",
-        options=('Max', 'Mean', 'Sum',)
+        options=('Sum','Mean','Max',)
     )
     # Plot untuk faktor eksternal casual register
     plot_casual_vs_registered(main_df, casual_register_select)
+    
+    time_of_day_select = st.selectbox(
+        label="Time Of Day Cluster Filter",
+        options=('Sum','Mean','Max',
+                 'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
+    )
+    # Plot untuk faktor eksternal temp
+    plot_with_highlight(main_df, "time_of_day_cluster",
+                        "Time Cluster", time_of_day_select)
+    
     temp_statistic_select = st.selectbox(
         label="Temperature Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal temp
@@ -345,7 +355,7 @@ else:
                         "Temperature Cluster", temp_statistic_select)
     humidity_statistic_select = st.selectbox(
         label="Humidity Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal hum
@@ -354,7 +364,7 @@ else:
     
     windspeed_statistic_select = st.selectbox(
         label="Windspeed Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal windspeed
@@ -362,7 +372,7 @@ else:
                         "Windspeed Cluster", windspeed_statistic_select)
     season_statistic_select = st.selectbox(
         label="Season Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal season
@@ -370,7 +380,7 @@ else:
                         "Season Cluster", season_statistic_select)
     weather_statistic_select = st.selectbox(
         label="Weather Condition Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal weather
@@ -378,7 +388,7 @@ else:
                         "Weather Condition Cluster", weather_statistic_select)
     holiday_statistic_select = st.selectbox(
         label="Holiday Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal is_holiday
@@ -386,7 +396,7 @@ else:
                         "Holiday Cluster", holiday_statistic_select)
     workingday_statistic_select = st.selectbox(
         label="Workingday Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal is_workingday
@@ -394,7 +404,7 @@ else:
                         "Workingday Cluster", workingday_statistic_select)
     day_statistic_select = st.selectbox(
         label="Day of the Week Cluster Filter",
-        options=('Max', 'Mean', 'Sum',
+        options=('Sum','Mean','Max',
                  'percentile_q1', 'Median', 'percentile_q3', 'variance', 'standar_deviation')
     )
     # Plot untuk faktor eksternal
