@@ -63,7 +63,7 @@ pip install streamlit pandas numpy matplotlib seaborn
 To run the Streamlit app, execute the following command in the project directory:
 
 ```bash
-streamlit run app.py
+streamlit dashboard/streamlit_app.py
 ```
 
 This will launch the Streamlit application in your default web browser. You will see the data analysis dashboard and interactive visualizations in the browser.
